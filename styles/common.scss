@@ -1,0 +1,46 @@
+
+body{ 
+  font-family: 'Roboto Slab', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size:12px;
+  background:#ffffff;
+}
+*{padding:0;margin:0;  }
+ul{ 
+list-style-type:none;
+}
+.clearfix:before,  
+.clearfix:after {  
+  content: "";  
+  display: table;  
+}  
+.clearfix:after {  
+  clear: both;  
+}  
+.clearfix{  
+  *zoom: 1;  
+}  
+
+.min-scroll {
+  overflow-y: scroll !important;
+}
+
+.min-scroll::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 10px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 5px;
+}
+
+.min-scroll::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px #c1c1c1;
+  background: #c1c1c1;
+}
+
+.min-scroll::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 5px #f1f1f1;
+  border-radius: 0;
+  background: #f1f1f1;
+}
