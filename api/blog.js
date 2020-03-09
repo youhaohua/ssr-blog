@@ -2,7 +2,7 @@ import request from '../utils/request'
 
 export function getList(params){ 
     return request({
-        url: 'http://localhost:6001/api/v1/list',
+        url: '/api/v1/blog/list',
         method: 'get',
         params
       })

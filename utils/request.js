@@ -14,7 +14,7 @@ function showMessage() {
 }
 const getMessage = showMessage()
 const service = axios.create({
-  baseURL:"/",
+  baseURL:"http://localhost:6001/",
   timeout: 5000 // request timeout
 })
 // request interceptor

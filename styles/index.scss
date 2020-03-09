@@ -1,20 +1,51 @@
 $light-color:#999;
 $normal-color:#555;
-.blogWrap{ 
- height:100vh;
- overflow: hidden;
+.blogWrap {
+    height: 100vh;
+    overflow: hidden;
 }
-.rightContent{float:right;width:60%;overflow-y: scroll;height:100%; }
-.ant-tabs-nav-scroll{display:flex;justify-content:center; }
-.ant-tabs-nav div.ant-tabs-tab{color:$normal-color;font-size:18px;padding:16px 0; }
-.ant-tabs-tab-active.ant-tabs-tab{color:$normal-color  }
-.ant-tabs-bar{border:none; }
+
+.rightContent {
+    float: right;
+    width: 60%;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.ant-tabs-nav-scroll {
+    display: flex;
+    justify-content: center;
+}
+
+.ant-tabs-nav div.ant-tabs-tab {
+    color: $normal-color;
+    font-size: 22px;
+    padding: 16px 0;
+
+}
+div.ant-tabs-ink-bar{ }
+.ant-tabs-nav div.ant-tabs-tab-active.ant-tabs-tab {
+    color:#1890ff
+   /*  color:rgba(0, 255, 255,1); */
+ //   text-shadow: 3px 3px 0 rgba(0, 255, 255,0.1);
+}
+
+.ant-tabs-bar {
+    border: none;
+}
 
 .header {
     height: 80px;
-    padding:20px;
-   /*  background: rgb(208, 208, 208); */
-   //background:rgb(230, 247, 255);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .userBox {
+        display: flex;
+        align-items: center;
+    }
+    /*  background: rgb(208, 208, 208); */
+    //background:rgb(230, 247, 255);
 }
 
 .fixed-bg {
@@ -28,14 +59,14 @@ $normal-color:#555;
 }
 
 .listUl {
-    width:6rem;
+    width: 6rem;
     margin: 0 auto;
     margin-top: 50px;
-    .articleItem{
+    .articleItem {
         min-height: 200px;
         color: #555;
         padding: 15px 20px;
-        margin-top:30px;
+        margin-top: 30px;
         box-shadow: 0 0 5px rgba(202, 203, 204, 0.5);
         -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, 0.5);
         -moz-box-shadow: 0 0 5px rgba(202, 203, 204, 0.5);
@@ -61,22 +92,21 @@ $normal-color:#555;
             -webkit-box-orient: vertical;
         }
     }
-} 
-
-
-/*detail*/
-.detailContent{ 
-    width:900px;
-    margin:0 auto;
-    margin-top:50px;
-    box-shadow: 0 0 5px rgba(202, 203, 204, 0.5);
-    min-height:500px;
-    padding: 15px 20px;
-    color:$normal-color;
-    line-height:24px;
-.contentTitle{ 
-text-align:center;
-font-size:22px;
 }
 
+/*detail*/
+
+.detailContent {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 0 0 5px rgba(202, 203, 204, 0.5);
+    min-height: 500px;
+    padding: 15px 20px;
+    color: $normal-color;
+    line-height: 24px;
+    .contentTitle {
+        text-align: center;
+        font-size: 22px;
+    }
 }

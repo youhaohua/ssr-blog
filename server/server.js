@@ -4,6 +4,7 @@ const session=require('koa-session')
 const koaBody=require('koa-body')
 const Redis=require("ioredis")
 const blogRouter=require("../router/blog")
+const userRouter=require("../router/user")
 const bodyparser = require('koa-bodyparser')
 const redis=new Redis();
 const proxy = require('koa-server-http-proxy')
@@ -19,6 +20,7 @@ app
             enableTypes:['json', 'form', 'text']
           }))
         server.use(blogRouter.routes(),blogRouter.allowedMethods());
+        server.use(userRouter.routes(),userRouter.allowedMethods());
         server.use((ctx, next) => {
             handle(ctx.req, ctx.res)
             ctx.respond = false
