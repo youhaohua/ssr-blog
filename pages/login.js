@@ -33,7 +33,7 @@ const Home = () => {
                     ]}>
                         <Input
                             prefix={< UserOutlined className = "site-form-item-icon" />}
-                            placeholder="Username"/>
+                            placeholder="用户名"/>
                     </Form.Item>
                     <Form.Item
                         name="password"
@@ -45,13 +45,12 @@ const Home = () => {
                         <Input
                             prefix={< LockOutlined className = "site-form-item-icon" />}
                             type="password"
-                            placeholder="Password"/>
+                            placeholder="密码"/>
                     </Form.Item>
                     <Form.Item>
                         <Button type="primary" htmlType="submit" className="login-form-button">
                             登录
                         </Button>
-                        Or
                         <a href="" style={{color:"#ffffff"}}>注册!</a>
                     </Form.Item>
                 </Form>

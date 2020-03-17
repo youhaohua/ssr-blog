@@ -18,6 +18,8 @@
     "koa-better-http-proxy": "^0.2.4",
     "koa-body": "^4.1.1",
     "koa-bodyparser": "^4.2.1",
+    "koa-generic-session": "^2.0.4",
+    "koa-redis": "^4.0.1",
     "koa-router": "^8.0.8",
     "koa-server-http-proxy": "^0.1.0",
     "koa-session": "^5.13.1",

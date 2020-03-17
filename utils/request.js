@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { message } from 'antd';
+import Router from 'next/router'
 function showMessage() {
   let visibleM = true
   return function(m, t) {
@@ -17,9 +18,9 @@ const service = axios.create({
   baseURL:"http://localhost:6001/",
   timeout: 5000 // request timeout
 })
-// request interceptor
 service.interceptors.request.use(
   config => {
+    //console.log("window",window);
     /*   config.headers['Authorization'] = getToken() */
     return config
   },
@@ -28,16 +29,16 @@ service.interceptors.request.use(
   }
 )
 service.interceptors.response.use(function(response) {
+  if(typeof window!=='undefined'){ 
+   
+  }
+  else{ 
+  
+  }
+  debugger
   return response.data
 }, function(error) {
-  if (error.response.status === 401) {
-  }
-  if (!error.response) {
-    getMessage('操作失败', 'error')
-    return
-  }
-  const status = error.response.status
-
+    debugger;
   return Promise.reject(error)
 })
 

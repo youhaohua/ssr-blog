@@ -1,14 +1,11 @@
-import {useLayoutEffect, useRef} from "react"
+import {useEffect,useLayoutEffect, useRef} from "react"
 import Move3d from "../utils/move3d"
 const WrapScale = ({children, width, height,deg}) => {
 
     const getDom = useRef()
-    useLayoutEffect(() => {
-        console.log("dom加载完成了");
-        console.log("dom", getDom.current.firstChild, children)
+    useEffect(() => {
         new Move3d(getDom.current.firstChild,deg);
         return () => {
-            console.log("dom加载完成的卸载")
         }
     })
     return (

@@ -7,6 +7,7 @@ router.post("/user/login", async function(ctx,next){
 const {username,password}=ctx.request.body
  const loginData= await login(username,password);
  debugger
+ ctx.session.test="hh"
  if(loginData[0].username){
     ctx.body=new SuccessModel('登录成功')
  }

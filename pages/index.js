@@ -1,4 +1,3 @@
-import '../styles/index.scss'
 import Article from '../components/Article'
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -22,14 +21,14 @@ import {
 const Index=({data})=>{
  
   const [tableData,setTableData]=useState(data)
-  console.log("data",tableData)
+  console.log("data",tableData);
   const ArticleList=tableData.data.map((item)=>{ 
   return(
    <WrapScale key={item.id}>
   <Article data={item}/>
   </WrapScale>
 )
-  })
+  }) 
 
 const handlePageChange=async (pageNum)=>{ 
 
@@ -63,7 +62,8 @@ return(
 )
 }
 
-Index.getInitialProps=async()=>{ 
+Index.getInitialProps=async(ctx)=>{ 
+ console.log('res cookie',ctx)
 const data=await getList({pageSize:10,pageNum:1})
  return{ 
   data
