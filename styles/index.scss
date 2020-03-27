@@ -35,7 +35,7 @@ div.ant-tabs-ink-bar{ }
 }
 
 .header {
-    height: 80px;
+    height: 60px;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -59,13 +59,13 @@ div.ant-tabs-ink-bar{ }
 }
 
 .listUl {
-    width: 6rem;
+    width: 8rem;
     margin: 0 auto;
     margin-top: 50px;
     .articleItem {
         min-height: 200px;
         color: #555;
-        padding: 15px 20px;
+        padding:0.15rem 0.2rem;
         margin-top: 30px;
         box-shadow: 0 0 5px rgba(202, 203, 204, 0.5);
         -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, 0.5);
@@ -81,7 +81,7 @@ div.ant-tabs-ink-bar{ }
             display: inline-block;
         }
         .icon {
-            margin-right: 3px;
+            margin-right:8px;
         }
         .content {
             line-height: 30px;
@@ -97,7 +97,7 @@ div.ant-tabs-ink-bar{ }
 /*detail*/
 
 .detailContent {
-    width: 900px;
+    width:9rem;
     margin: 0 auto;
     margin-top: 50px;
     box-shadow: 0 0 5px rgba(202, 203, 204, 0.5);
@@ -105,8 +105,24 @@ div.ant-tabs-ink-bar{ }
     padding: 15px 20px;
     color: $normal-color;
     line-height: 24px;
+    img{width:90%; }
     .contentTitle {
         text-align: center;
         font-size: 22px;
     }
+}
+
+/*release*/
+.marginBottom{ 
+margin-bottom:20px;
+}
+
+/* 文章页 */
+button.checkButton{ 
+position:absolute;
+bottom:0.15rem;
+right:0.15rem;
+border-radius:3px;
+border:none;
+
 }

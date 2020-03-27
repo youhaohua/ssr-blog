@@ -63,7 +63,7 @@ return(
 }
 
 Index.getInitialProps=async(ctx)=>{ 
- console.log('res cookie',ctx)
+ //console.log('res cookie',ctx)
 const data=await getList({pageSize:10,pageNum:1})
  return{ 
   data

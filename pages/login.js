@@ -7,9 +7,9 @@ const Home = () => {
         const data=await login(values);
         if(data.errno==0){ 
             message.success('登录成功');
-            Router.push("/")
+            Router.push("/release")
         }else{ 
-            message.error('登录失败');
+            message.error('用户名或密码不正确');
         }
         console.log('Received values of form:',data,values);
       };
@@ -48,10 +48,10 @@ const Home = () => {
                             placeholder="密码"/>
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" className="login-form-button">
+                        <Button type="primary" htmlType="submit" style={{marginRight:"20px"}} className="login-form-button">
                             登录
                         </Button>
-                        <a href="" style={{color:"#ffffff"}}>注册!</a>
+                      {/*   <a href="" style={{color:"#ffffff"}}>注册!</a> */}
                     </Form.Item>
                 </Form>
 
@@ -80,6 +80,9 @@ const Home = () => {
                     .loginText {
                         font-size: 20px;
                         text-align: center;
+                    }
+                    .login-form-button{
+                     margin-right:20px;
                     }
                      `
                 }</style>

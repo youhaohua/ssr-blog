@@ -25,7 +25,7 @@ class Move3d {
           }, 1000);
         }
         this.oDiv.style.transform = `perspective(1000px) rotateX(${this.disY /
-          scale}deg) rotateY(${this.disX / scale}deg) scale3d(0.94, 0.94, 0.94)`;
+          scale}deg) rotateY(${this.disX / scale}deg) scale3d(0.96, 0.96, 0.96)`;
         this.oldDisX = ev.clientX;
         this.oldDisY = ev.clientY;
         this.once = false;

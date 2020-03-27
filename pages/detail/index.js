@@ -1,23 +1,27 @@
-
 import {withRouter} from "next/router"
 import Header from "../../components/Header"
-const detail=({router})=>{ 
-    return(
-    <div>
-     <Header/>
-     <div className="detailContent"  >
-     <p className='contentTitle'>test{router.query.id}</p>
-     <div className="content">
-     虎扑3月6日讯 今日，金州勇士主场迎战多伦多猛龙。勇士后卫斯蒂芬-库里在去年十月遭遇左手第二掌骨骨折之后迎来了自己的复出首战。在第一节比赛中出场6分钟，贡献1篮板3助攻。
-    虎扑3月6日讯 今日，金州勇士主场迎战多伦多猛龙。勇士后卫斯蒂芬-库里在去年十月遭遇左手第二掌骨骨折之后迎来了自己的复出首战。在第一节比赛中出场6分钟，贡献1篮板3助攻。
-    虎扑3月6日讯 今日，金州勇士主场迎战多伦多猛龙。勇士后卫斯蒂芬-库里在去年十月遭遇左手第二掌骨骨折之后迎来了自己的复出首战。在第一节比赛中出场6分钟，贡献1篮板3助攻。
-    虎扑3月6日讯 今日，金州勇士主场迎战多伦多猛龙。勇士后卫斯蒂芬-库里在去年十月遭遇左手第二掌骨骨折之后迎来了自己的复出首战。在第一节比赛中出场6分钟，贡献1篮板3助攻。
-    虎扑3月6日讯 今日，金州勇士主场迎战多伦多猛龙。勇士后卫斯蒂芬-库里在去年十月遭遇左手第二掌骨骨折之后迎来了自己的复出首战。在第一节比赛中出场6分钟，贡献1篮板3助攻。
-    虎扑3月6日讯 今日，金州勇士主场迎战多伦多猛龙。勇士后卫斯蒂芬-库里在去年十月遭遇左手第二掌骨骨折之后迎来了自己的复出首战。在第一节比赛中出场6分钟，贡献1篮板3助攻。
-     </div>
-     </div>
-    </div>
+import {useState, useEffect,useLayoutEffect} from "react"
+import {getBlog} from "../../api/blog"
+const detail = ({router,data}) => {
+    console.log("data",data)
+    return (
+        <div>
+            <Header/>
+            <div className="detailContent">
+                <p className='contentTitle'>{data.data[0].title}</p>
+                <div className="content">
+                <div dangerouslySetInnerHTML = {{__html:data.data[0].content}} ></div>
+                </div>
+            </div>
+        </div>
     )
 }
-
+detail.getInitialProps=async(ctx,router)=>{ 
+    console.log('res cookie',ctx.query)
+    const params={id:ctx.query.id}
+   const data=await getBlog(params)
+    return{ 
+     data
+    }
+   }
 export default withRouter(detail)

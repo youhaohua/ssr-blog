@@ -44,3 +44,14 @@ list-style-type:none;
   border-radius: 0;
   background: #f1f1f1;
 }
+.clearfix:before,  
+.clearfix:after {  
+  content: "";  
+  display: table;  
+}  
+.clearfix:after {  
+  clear: both;  
+}  
+.clearfix{  
+  *zoom: 1;  
+}  

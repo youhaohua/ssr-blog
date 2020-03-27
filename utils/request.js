@@ -35,10 +35,9 @@ service.interceptors.response.use(function(response) {
   else{ 
   
   }
-  debugger
+ 
   return response.data
 }, function(error) {
-    debugger;
   return Promise.reject(error)
 })
 

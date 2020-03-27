@@ -9,3 +9,18 @@ export function getList(params){
       })
 }
 
+export function addBlog(data){ 
+    return request({
+        url: '/api/v1/blog/add',
+        method: 'post',
+        data 
+      })
+}
+
+export function getBlog(params){ 
+    return request({
+    url:"/api/v1/blog/detail",
+    method:"get",
+    params
+   })
+}

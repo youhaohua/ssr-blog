@@ -10,7 +10,7 @@ const WrapScale = ({children, width, height,deg}) => {
     })
     return (
         <div
-            className="scaleWrap"
+            className="scaleWrap clearfix"
             ref={getDom}
             style={{
             width:width,
@@ -48,7 +48,7 @@ const WrapScale = ({children, width, height,deg}) => {
 WrapScale.defaultProps={
  width:"auto",
  height:"auto",
- deg:1
+ deg:0.6
 }
 
 export default WrapScale

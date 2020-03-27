@@ -14,8 +14,21 @@ const getListCount=()=>{
  return exec(sql);
 }
 
+const addBlog=(params)=>{ 
+ const {title,content,createtime,author}=params
+ let sql=`insert into blogs (title,content,createtime,author) values('${title}',' ${content}', '${createtime}', '${author}')`
+
+ return exec(sql)
+
+}
+const getBlog=(id)=>{ 
+  let sql=`select * from blogs where id=${id}`
+  return exec(sql)
+}
 
 module.exports={ 
     getListAll,
-    getListCount
+    getListCount,
+    addBlog,
+    getBlog
 }

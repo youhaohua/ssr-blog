@@ -3,7 +3,7 @@ const Footer=()=>{
 
  return(  
  <footer className="footer">
-  <span>Designed and developed by YHH.</span>
+  <span>Developed by YHH.</span>
  <style jsx>
  { 
  `

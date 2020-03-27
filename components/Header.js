@@ -9,7 +9,7 @@ const Header=()=>{
  <div className="userBox" >
 <span style={{marginRight:"10px"}}>用户名</span>
  <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
- </div>):(<Link href="/login" ><Button  onClick={handleLogin} >登录</Button></Link>)
+ </div>):(<Link href="/login" ><Button type="link" style={{cursor:"pointer",fontSize:"10px"}}  onClick={handleLogin} >登录</Button></Link>)
 
 return( 
  <header  className='header'>
