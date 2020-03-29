@@ -18,10 +18,12 @@ import {
   useMemo,
   useCallback,
 } from 'react'
+import dynamic from 'next/dynamic'
+const TalkBox=dynamic(import('../components/TalkBox' ))
+const MusicBox= dynamic(import ('../components/MusicBox.js'), {ssr: false})
 const Index=({data})=>{
  
   const [tableData,setTableData]=useState(data)
-  console.log("data",tableData);
   const ArticleList=tableData.data.map((item)=>{ 
   return(
    <WrapScale key={item.id}>
@@ -51,9 +53,11 @@ return(
     <Pagination style={{textAlign:"center",marginTop:"30px"}}  current={tableData.pageNum} onChange={handlePageChange} total={tableData.total} />
    </div>
     </TabPane>
-    <TabPane tab="听首歌吧" key="2">
+    <TabPane tab="听首歌吧" key="2"> 
+     <MusicBox/>
     </TabPane>
-    <TabPane tab="跟我聊聊" key="3">
+    <TabPane tab="聊两句" key="3">
+    <TalkBox/>
     </TabPane>
   </Tabs>
   <Footer/>

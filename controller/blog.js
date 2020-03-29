@@ -25,10 +25,21 @@ const getBlog=(id)=>{
   let sql=`select * from blogs where id=${id}`
   return exec(sql)
 }
+const addComment=(params)=>{ 
+  const {content,name,date,id_a}=params;
+  let sql=`insert into comments(content,name,date,id_a) values ('${content}','${name}','${date}','${id_a}')`
+  return exec(sql)
+}
+getComment=(id)=>{ 
+let sql=`select * from comments where id_a='${id}'`
+return exec(sql)
+}
 
 module.exports={ 
     getListAll,
     getListCount,
     addBlog,
-    getBlog
+    getBlog,
+    addComment,
+    getComment
 }

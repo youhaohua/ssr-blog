@@ -28,7 +28,7 @@ export default({data}) => {
       </div>
       <Link href={`/detail?id=${data.id}`} >
         <Button type="primary" className="checkButton">查看</Button>
-      </Link>
+      </Link> 
       <style jsx>
         {
           ` .articleItem {

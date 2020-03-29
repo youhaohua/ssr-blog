@@ -24,3 +24,19 @@ export function getBlog(params){
     params
    })
 }
+
+export function addComment(data){ 
+    return request({
+        url: '/api/v1/blog/comment',
+        method: 'post',
+        data 
+      })
+}
+
+export function getComment(params){ 
+    return request({
+        url: '/api/v1/blog/comment',
+        method: 'get',
+        params
+      })
+}

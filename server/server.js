@@ -14,10 +14,14 @@ const handle = app.getRequestHandler()
 const server = new Koa()
 const {REDIS_CONF} = require('../conf/db')
 const router = new Router()
+const  websockify = require('koa-websocket');
+const IO = require('koa-socket-2');
+const io = new IO();
 app
     .prepare()
     .then(() => {
-        const server = new Koa();
+        
+        console.log("server",server)
         server.use(bodyparser({
             enableTypes: ['json', 'form', 'text']
         }))
@@ -51,7 +55,11 @@ app
         server.use((ctx, next) => {
             handle(ctx.req, ctx.res)
             ctx.respond = false
-        })
+        }) 
+       io.attach(server);
+       io.on('sendmsg', (ctx, data) => {
+         console.log('client sent data to message endpoint', data);
+       });
         server.listen(6001, () => {
             console.log('服务端渲染开启了6001');
         })
