@@ -3,7 +3,7 @@ var socket = require('socket.io-client')('http://localhost:6001');
 socket.on('connect', function(){});
 socket.on('event', function(data){});
 socket.on('disconnect', function(){});
-const TalkBox = () => {
+const TalkBox = ({uName,superAdmin}) => {
     const handleMessage=()=>{ 
         console.log('触发了socket')
         socket.emit('sendmsg',{data:"testio"})

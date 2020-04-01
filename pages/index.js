@@ -19,10 +19,18 @@ import {
   useCallback,
 } from 'react'
 import dynamic from 'next/dynamic'
+import {Button} from "antd"
+import { StickyContainer, Sticky } from 'react-sticky';
 const TalkBox=dynamic(import('../components/TalkBox' ))
 const MusicBox= dynamic(import ('../components/MusicBox.js'), {ssr: false})
-const Index=({data})=>{
- 
+const Index=({data,test})=>{
+  const renderTabBar = (props, DefaultTabBar) => (
+    <Sticky bottomOffset={80}>
+      {({ style }) => (
+        <DefaultTabBar {...props} className="site-custom-tab-bar" style={{ ...style }} />
+      )}
+    </Sticky>
+  );
   const [tableData,setTableData]=useState(data)
   const ArticleList=tableData.data.map((item)=>{ 
   return(
@@ -40,15 +48,33 @@ const handlePageChange=async (pageNum)=>{
 
 }
 
+/* const [test1,setTest]=useState(1)
+
+useEffect(()=>{
+  console.log("组件加载了")
+  return()=>{
+  console.log('组件卸载了')
+  }
+ },[])
+
+const handleTest=()=>{ 
+
+setTest(test1=>test1+1)
+} */
+
 return(
   <div className="blogWrap">
   <LeftPanel/>
   <div className="rightContent min-scroll">
-  <Header/>
-  <Tabs defaultActiveKey="1">
+  <Header/> 
+  <StickyContainer>
+  <Tabs defaultActiveKey="1" renderTabBar={renderTabBar}>
     <TabPane tab="我的文章" key="1">
-{/*   <img src="/static/images/index-bg02.jpeg" className="fixed-bg" alt=""/> */}
-   <div className="listUl" style={{marginBottom:"50px"}}>
+   <div className="listUl" style={{marginBottom:"50px"}}> 
+   <div>
+{/*    <p>{test1}</p>
+  <Button onClick={handleTest}>点击</Button> */}
+   </div>
     {ArticleList}
     <Pagination style={{textAlign:"center",marginTop:"30px"}}  current={tableData.pageNum} onChange={handlePageChange} total={tableData.total} />
    </div>
@@ -57,9 +83,10 @@ return(
      <MusicBox/>
     </TabPane>
     <TabPane tab="聊两句" key="3">
-    <TalkBox/>
+    <TalkBox uName="xx" />
     </TabPane>
-  </Tabs>
+  </Tabs> 
+  </StickyContainer>
   <Footer/>
   </div>
   </div>
