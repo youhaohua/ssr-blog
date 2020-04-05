@@ -1,7 +1,7 @@
 import { Tabs } from 'antd';
 import { StickyContainer, Sticky } from 'react-sticky';
 import dynamic from 'next/dynamic'
-const TalkBox=dynamic(import('../components/TalkBox' ))
+const TalkBox=dynamic(import('../components/TalkBox'),{ssr: false})
 const { TabPane } = Tabs;
 const TalkManager=()=>{ 
     const renderTabBar = (props, DefaultTabBar) => (
@@ -16,7 +16,7 @@ const TalkManager=()=>{
      <StickyContainer>
     <Tabs defaultActiveKey="1" renderTabBar={renderTabBar}>
       <TabPane tab="Tab 1" key="1">
-       <TalkBox uName="ee"  superAdmin={true} />
+       <TalkBox uName="ee"  superAdmin={true} to="游昊华fa8be17f49ee43cdbc9b4c22b93751e1"/>
       </TabPane>
       <TabPane tab="Tab 2" key="2">
         Content of Tab Pane 2

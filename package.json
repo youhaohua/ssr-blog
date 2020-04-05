@@ -15,6 +15,7 @@
     "axios": "^0.19.2",
     "braft-editor": "^2.3.9",
     "ioredis": "^4.16.0",
+    "js-md5": "^0.7.3",
     "koa": "^2.11.0",
     "koa-better-http-proxy": "^0.2.4",
     "koa-body": "^4.1.1",

@@ -16,7 +16,7 @@ const getListCount=()=>{
 
 const addBlog=(params)=>{ 
  const {title,content,createtime,author}=params
- let sql=`insert into blogs (title,content,createtime,author) values('${title}',' ${content}', '${createtime}', '${author}')`
+ let sql=`insert into blogs (title,content,createtime,author) values('${title}','${content}', '${createtime}', '${author}')`
 
  return exec(sql)
 

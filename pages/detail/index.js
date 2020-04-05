@@ -14,6 +14,7 @@ import {
 } from 'antd'
 import moment from 'moment'
 import {addComment} from "../../api/blog"
+import md5 from 'js-md5'
 import {CalendarOutlined, ContactsOutlined, CommentOutlined, EyeOutlined, FileTextOutlined} from '@ant-design/icons'
 const {TextArea} = Input;
 const detail = ({router, data,dataComment}) => {
@@ -55,6 +56,7 @@ const detail = ({router, data,dataComment}) => {
     }
     const onFinish = values => {
         console.log('Success:', values);
+        values.uname=values.name+md5('slat2020');
         localStorage.setItem("_info_visitor",JSON.stringify(values))
         setVisible(infoVisible =>false)
       };
@@ -192,10 +194,9 @@ const detail = ({router, data,dataComment}) => {
         </div>
     )
 }
-detail.getInitialProps = async(ctx, router) => {
-    console.log('res cookie', ctx.query)
+detail.getInitialProps = async({ctx, router}) => {
     const params = {
-        id: ctx.query.id
+        id:ctx.query.id
     }
     const data = await getBlog(params)
     const comment=await getComment(params)

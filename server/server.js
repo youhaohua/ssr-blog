@@ -6,6 +6,7 @@ const koaBody = require('koa-body')
 const redisStore = require("koa-redis")
 const blogRouter = require("../router/blog")
 const userRouter = require("../router/user")
+const messageRouter = require("../router/message")
 const bodyparser = require('koa-bodyparser')
 const proxy = require('koa-server-http-proxy')
 const dev = true;
@@ -17,6 +18,7 @@ const router = new Router()
 const  websockify = require('koa-websocket');
 const IO = require('koa-socket-2');
 const io = new IO();
+const {getMessage}=require('../controller/message')
 app
     .prepare()
     .then(() => {
@@ -52,13 +54,18 @@ app
         server.use(router.routes())
         server.use(blogRouter.routes(), blogRouter.allowedMethods());
         server.use(userRouter.routes(), userRouter.allowedMethods());
+        server.use(messageRouter.routes(), messageRouter.allowedMethods());
         server.use((ctx, next) => {
             handle(ctx.req, ctx.res)
             ctx.respond = false
         }) 
        io.attach(server);
-       io.on('sendmsg', (ctx, data) => {
-         console.log('client sent data to message endpoint', data);
+       io.on('sendmsg',async (ctx, data) => {
+         console.log('客户端发送了信息',data);
+          const dataSelf=await getMessage({from:data.from,to:data.to});
+          const dataTo=await getMessage({from:data.to,to:data.from})
+         ctx.socket.emit('recMsg',{dataSelf,dataTo});
+         
        });
         server.listen(6001, () => {
             console.log('服务端渲染开启了6001');
