@@ -12,7 +12,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "antd": "^4.0.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "braft-editor": "^2.3.9",
     "ioredis": "^4.16.0",
     "js-md5": "^0.7.3",
