@@ -27,7 +27,7 @@
     "koa-session": "^5.13.1",
     "koa-socket-2": "^1.2.0",
     "koa-websocket": "^6.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "mysql": "^2.18.1",
     "next": "9.2.2",
     "node-sass": "^4.13.1",
